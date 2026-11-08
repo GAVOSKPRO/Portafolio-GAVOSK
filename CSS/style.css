@@ -183,6 +183,8 @@ body {
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
   background: var(--bg-card);
   border-radius: 10px;
   overflow: hidden;
@@ -197,6 +199,9 @@ body {
 }
 
 .project-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding: 1.2rem;
 }
 
@@ -210,6 +215,21 @@ body {
 
 .project-card p {
   color: var(--text-card-body);
+}
+
+.project-link-container {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.project-link {
+  color: var(--yellow-accent);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.project-link:hover {
+  color: var(--yellow-accent);
 }
 
 .tags {
