@@ -1,0 +1,349 @@
+/* --- VARIABLES Y RESET --- */
+:root {
+  --bg-main: #f8f9fa;       /* Fondo claro neutro */
+  --bg-card: rgba(14, 25, 48, 1); /* Azul medianoche para las tarjetas */
+  --text-dark: #e0e1dd;     /* Texto legibles sin ser negro puro */
+  --text-muted: #5c677d;
+  
+  /* Paleta de acentos extraída de tu Logo GAVOSK */
+  --blue-accent: #0056b3;   /* Azul principal */
+  --yellow-accent: #fbc02d; /* Amarillo de estelas/botones */
+  --green-dark: #1b4332;     /* Verde de base/footer */
+
+  --text-card-title: #ffffff;           /* Blanco para títulos */
+  --text-card-body: #e0e1dd;            /* Gris claro para descripciones */
+  --text-card-tag: #90e0ef;
+
+  --navbar: #ffffff;  
+  --text-nav: #1b263b;  
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* --- NAV BAR --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: var(--navbar);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--blue-accent);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-nav);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--blue-accent);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  /* Imagen de fondo, evitando que se repita, centrada y cubriendo todo el espacio */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../IMG/banner01.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Espaciado interno generoso para que el banner luzca alto y amplio */
+  padding: 6rem 1rem;
+  text-align: center;
+  
+  /* Hacemos que los textos dentro del hero sean blancos para contrastar con el fondo oscuro */
+  color: #ffffff;
+}
+
+.hero-avatar {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1rem;
+}
+
+/* Ajustamos los colores de los textos del hero específicamente para que resalten sobre la imagen */
+.hero h1 {
+  font-size: 2.5rem;
+  color: #ffffff; /* Texto blanco puro o puedes usar tu --yellow-accent si prefieres */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Sombra para darle relieve */
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #fbc02d;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+  color: #f8f9fa;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* --- BOTONES --- */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--blue-accent);
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--blue-accent);
+  border: 2px solid var(--blue-accent);
+  margin-left: 10px;
+}
+
+.btn-accent {
+  background-color: var(--yellow-accent);
+  color: #000;
+  width: 100%;
+  text-align: center;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible,
+.nav-links a:focus-visible,
+.contact-info a:focus-visible {
+  outline: 3px solid var(--yellow-accent);
+  outline-offset: 3px;
+}
+
+/* --- SECCIONES Y TARJETAS --- */
+.section {
+  padding: 3rem 5%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--blue-accent);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--bg-card);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #e9ecef;
+}
+
+.project-img img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1.2rem;
+}
+
+.project-info h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project-card h3 {
+  color: var(--text-card-title);
+}
+
+.project-card p {
+  color: var(--text-card-body);
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  margin: 1rem 0;
+}
+
+.tags span {
+  color: var(--text-card-tag);
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* --- FOOTER --- */
+.footer {
+  background-color: var(--green-dark);
+  color: #ffffff;
+  text-align: center;
+  padding: 2.5rem 1rem 1rem 1rem;
+  margin-top: 3rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+}
+
+.copyright {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.contact-info a {
+  color: inherit;
+}
+
+.social-links-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* --- DISEÑO RESPONSIVO PARA MÓVILES (Pantallas menores a 768px) --- */
+@media (max-width: 768px) {
+  
+  /* Ajustar la barra de navegación para que los elementos se apilen o reduzcan espacio */
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    gap: 15px;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Reducir el tamaño de los títulos principales en celulares */
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Hacer que los botones del hero se apilen verticalmente en lugar de horizontalmente */
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-secondary {
+    margin-left: 0;
+  }
+}
+
+
+/* --- ESTILOS DE LA SECCIÓN HABILIDADES --- */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.skills-category {
+  background-color: var(--bg-card); /* Usa tu azul medianoche */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skills-category h3 {
+  color: var(--yellow-accent); /* Destaca con el amarillo de tu logo */
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-badge {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #e0e1dd;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.skill-badge:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.skill-badge i {
+  color: var(--yellow-accent);
+}
