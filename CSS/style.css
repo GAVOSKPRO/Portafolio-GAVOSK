@@ -416,3 +416,29 @@ body {
   color: #e0e1dd;
   margin: 0;
 }
+
+/* --- MARCO PARA VIDEO DE YOUTUBE --- */
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.video-frame {
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  background-color: #1b263b; /* Color de tu azul corporativo / botones */
+  padding: 20px;              /* Esto crea el grosor visible del marco */
+  border-radius: 14px;       /* Bordes exteriores redondeados */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;    
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;        /* Redondea las esquinas internas del video */
+  display: block;
+}
